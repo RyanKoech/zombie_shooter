@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour {
+public class PlayerMove : MonoBehaviour
+{
 
     private Rigidbody2D myBody;
     private float moveForce_X = 1.5f, moveForce_Y = 1.5f;
     private PlayerAnimations playerAnimation;
-    void Awake() 
+    void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
         playerAnimation = GetComponent<PlayerAnimations>();
     }
 
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         Move();
     }
 
-    void Move() 
+    void Move()
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -26,10 +27,12 @@ public class PlayerMove : MonoBehaviour {
         if (h > 0)
         {
             myBody.velocity = new Vector2(moveForce_X, myBody.velocity.y);
-        } else if (h < 0)
+        }
+        else if (h < 0)
         {
             myBody.velocity = new Vector2(-moveForce_X, myBody.velocity.y);
-        } else
+        }
+        else
         {
             myBody.velocity = new Vector2(0f, myBody.velocity.y);
         }
@@ -48,7 +51,7 @@ public class PlayerMove : MonoBehaviour {
         }
 
         // ANIMATE
-        playerAnimation.PlayerRunAnimdation(myBody.velocity.x != 0 || myBody.velocity.y != 0);
+        playerAnimation.PlayerRunAnimation(myBody.velocity.x != 0 || myBody.velocity.y != 0);
 
         Vector3 tempScale = transform.localScale;
 

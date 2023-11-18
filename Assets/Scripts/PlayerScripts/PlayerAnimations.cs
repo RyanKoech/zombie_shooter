@@ -11,11 +11,10 @@ public class PlayerAnimations : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-  
-    public void PlayerRunAnimdation(bool run)
+
+    public void PlayerRunAnimation(bool run)
     {
         anim.SetBool(TagManager.RUN_PARAMETER, run);
-
     }
 
     public void AttachAnimation()
