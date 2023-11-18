@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114036539489540452}
   - component: {fileID: 114014055907467088}
   m_Layer: 0
-  m_Name: Frame
+  m_Name: Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
